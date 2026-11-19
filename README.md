@@ -1,5 +1,10 @@
 # tag-databook
 
+[![PyPI](https://img.shields.io/pypi/v/tag-databook)](https://pypi.org/project/tag-databook/)
+[![Python](https://img.shields.io/pypi/pyversions/tag-databook)](https://pypi.org/project/tag-databook/)
+[![CI](https://github.com/rosedillon/tag-databook/actions/workflows/ci.yml/badge.svg)](https://github.com/rosedillon/tag-databook/actions/workflows/ci.yml)
+[![Licence: GPL-3.0](https://img.shields.io/badge/licence-GPL--3.0-blue)](https://github.com/rosedillon/tag-databook/blob/main/LICENSE)
+
 Read appraisal parameters out of the DfT TAG Data Book without opening
 Excel.
 
@@ -35,7 +40,7 @@ guidance. Round them when you present them, as the CLI does.
 Python 3.11 or later.
 
 ```sh
-pip install git+https://github.com/rosedillon/tag-databook
+pip install tag-databook
 ```
 
 or, from a clone, `pip install .`. The only runtime dependency is
@@ -118,7 +123,7 @@ Add `--json` to any of these for machine-readable output.
 
 | Parameter | Where in the workbook | In Python |
 |---|---|---|
-| values of time, working and non-working | Table A1.3.1 | `book.vot`, a [`ValueOfTime`](src/tag_databook/tables.py) |
+| values of time, working and non-working | Table A1.3.1 | `book.vot`, a [`ValueOfTime`](https://github.com/rosedillon/tag-databook/blob/main/src/tag_databook/tables.py) |
 | car value of time by distance (a logistic curve) | Table A1.3.1 | `book.car_vot_by_distance(km)` |
 | Green Book stepped discount rates (standard, health, risk to life) | Table A1.1.1 | `book.discount`, `book.discount_factor(n)` |
 | carbon values, low, central and high by year | Table A3.4.1 | `book.carbon`, `book.carbon_price(year)` |
@@ -147,7 +152,7 @@ for fallback in book.fallbacks:
 
 An empty `book.fallbacks` means every value came from your workbook. A
 long list means the layout has moved and the cells in
-[`databook.py`](src/tag_databook/databook.py) need updating. They are
+[`databook.py`](https://github.com/rosedillon/tag-databook/blob/main/src/tag_databook/databook.py) need updating. They are
 listed together at the top of that module, so updating them is a data
 change, not a code change.
 
@@ -163,7 +168,7 @@ book = TagDataBook.with_defaults()
 ```
 
 This has the same interface, backed by v2.03 figures written into
-[`defaults.py`](src/tag_databook/defaults.py). Values of time are
+[`defaults.py`](https://github.com/rosedillon/tag-databook/blob/main/src/tag_databook/defaults.py). Values of time are
 rounded to the penny. Two other differences:
 
 - The carbon series is grown from the 2023 central value at 1.5% a
@@ -213,12 +218,12 @@ ruff check . && ruff format --check . && mypy src
 ```
 
 The tests build synthetic workbooks with values at exactly the cells the
-parser reads (see [`tests/conftest.py`](tests/conftest.py)), so moving a
+parser reads (see [`tests/conftest.py`](https://github.com/rosedillon/tag-databook/blob/main/tests/conftest.py)), so moving a
 cell in the parser without moving it in the fixture fails the suite.
 The tests need no network and no copy of the real workbook.
 
 ## Licence
 
-GPL-3.0. See [LICENSE](LICENSE).
+GPL-3.0. See [LICENSE](https://github.com/rosedillon/tag-databook/blob/main/LICENSE).
 
 Not affiliated with or endorsed by the Department for Transport.
