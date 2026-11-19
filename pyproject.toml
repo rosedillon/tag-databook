@@ -4,23 +4,28 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tag-databook"
-version = "0.1.0"
-description = "Read appraisal parameters out of the DfT TAG Data Book workbook."
+version = "0.1.1"
+description = "Read DfT TAG Data Book (WebTAG) values in Python: values of time, discount rates, carbon values and the GDP deflator."
 readme = "README.md"
 requires-python = ">=3.11"
 license = "GPL-3.0-only"
 license-files = ["LICENSE"]
 authors = [{ name = "Dillon Rose", email = "dillonrose0@icloud.com" }]
-keywords = ["transport", "appraisal", "webtag", "tag", "dft", "cost-benefit"]
+keywords = ["tag", "webtag", "tag-data-book", "dft", "transport-appraisal", "cost-benefit-analysis", "value-of-time", "green-book", "transport", "uk", "economics"]
 classifiers = [
     "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
+    "Topic :: Office/Business :: Financial",
     "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = ["openpyxl>=3.1"]
 
@@ -32,8 +37,10 @@ tag-databook = "tag_databook.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/rosedillon/tag-databook"
+Documentation = "https://github.com/rosedillon/tag-databook#readme"
+Source = "https://github.com/rosedillon/tag-databook"
 Issues = "https://github.com/rosedillon/tag-databook/issues"
-"TAG Data Book" = "https://www.gov.uk/government/publications/tag-data-book"
+Changelog = "https://github.com/rosedillon/tag-databook/releases"
 
 [tool.setuptools.packages.find]
 where = ["src"]
